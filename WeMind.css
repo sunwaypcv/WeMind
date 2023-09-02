@@ -1,0 +1,402 @@
+@font-face{
+    font-family:"Nunito";
+    src: url("./Assets/Fonts/Nunito-VariableFont_wght.ttf");
+}
+
+:root{
+    --White: #FFF;
+    --Beige: #FAEBD8;
+    --Peach: #FFB26B;
+    --Orange: #FF7B54;
+    --Green: #918658;
+    --Red: #C7745E;
+    --Brown: #9F5C4A;
+    --BrownT: #9F5C4ACC;
+}
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: Nunito;
+    /* font-family: Helvetica; */
+    position: absolute;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+#landing{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Beige);
+}
+
+#bigname{
+    width: 90%;
+    height: auto;
+    object-fit: scale-down;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#detector{
+    opacity: 0;
+}
+
+#subtitle,#details{
+    max-width: 80%;
+    top: 70vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    font-size: 2.5vh;
+    color: var(--Brown);
+    text-align: center;;
+}
+#details{
+    top: 80vh;
+}
+#second{
+    top:100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+#event{
+    font-size: 2vh;
+    top: 2vh;
+    left: 0;
+    margin-left: 1vw;
+    transform: none;
+}
+
+a{
+    color: var(--White);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+a::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--White);
+    transition: width 0.2s ease-out;
+}
+a:hover::before{
+    width: 100%;
+    right: auto;
+    left: 0;
+    background-color: var(--Peach);    
+}
+a:hover{
+    color: var(--Peach);
+}
+@media only screen and (min-width:800px) {
+    /* computer */
+    .phone{
+        display: none;
+    }
+    #navbar{
+        top: -7.5vh;
+        left: 0;
+        height: 7.5vh;
+        width: 100vw;
+        position: fixed;
+        background-color: var(--Beige);
+        z-index: 20;
+        box-shadow: 0 0.1vh 0.5vh grey;
+        transition: 1s all;
+        /* border-bottom: var(--Brown) 3px solid; */
+    }
+    #detector{
+        top: 0;
+        left: 0;
+        height: 7.5vh;
+        width: 100vw;
+        z-index: 60;
+        position: fixed;
+    }
+    #toplogo{
+        height: 80%;
+        width: calc(0.8*7.5vh);
+        object-fit: scale-down;
+        top: 10%;
+        /* transform: translateX(-50%); */
+    }
+    #events{
+        margin: 0 0;
+        padding: 0 1vw;
+        position: absolute;
+        top: 10vh;
+        height: 75vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 76vw;
+        /* border: 3px solid var(--Brown); */
+        border: 3px solid #DDDDDDAA;
+        /* border-radius: 1vw;; */
+        background-color: #DDDDDDAA;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2vw;
+        overflow-y: hidden;
+    }
+    #events div{
+        padding: 0 0vw;
+        width: 100%;
+        height: 90%;
+        top: 5vh;
+        /* border-radius: 2vh; */
+        /* border: 2px antiquewhite solid; */
+        overflow: hidden;
+        transition: 1s forwards all;
+    }
+    #MCV{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #MCV #MCV-info {
+        top: 100%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: var(--BrownT);
+        transition: 1s all ease-in-out;
+        position: absolute;
+        z-index: 5;
+        /* font-size: 1vw; */
+    }
+    .learnmore{
+        all:revert;
+    }
+    .learnmore:hover,.learnmore:before{
+        all:revert;
+    }
+    #MCVimage, #Infoimage{
+        object-fit: contain;
+        object-position: -12vw 0;
+        height: 100%;
+        width: auto;
+        transition: all 0.3s forwards;
+    }
+    #MCVimage:hover,#MMimage:hover,#Infoimage:hover{
+        opacity: 0.8;
+    }
+    #MCVdes,#MMdes,#Infodes{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        z-index: 4;
+        font-size: 1.5vw;
+        margin-bottom: 0.5vw;
+    }
+    #MCV-info,#MM-info,#Info-info{
+        text-align: center;
+    }
+    #MCV-details,#MM-details,#Info-details{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        color: white;
+        font-size: 1.3em;
+        line-height: 3;
+    }
+    #MCV-link{
+        left: 0;
+        /* width: 100%; */
+    }
+    #MM{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #MM #MM-info{
+        top: 100%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: var(--BrownT);
+        transition: 1s all ease-in-out;
+        position: absolute;
+        z-index: 5;
+        font-size: 0.8rem;
+    }
+    #MMimage{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        object-fit: contain;
+        height: auto;
+        width: 100%;
+        transition: all 0.3s forwards;
+    }
+    #Info{
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    #Info #Info-info{
+        top: 100%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: var(--BrownT);
+        transition: 1s all ease-in-out;
+        position: absolute;
+        z-index: 5;
+    }
+    #popup{
+        display: none;
+        position: fixed;
+        top: 50%;
+        left:50%;
+        background-color: #DDDDDD;
+        border: 3px solid #DDDDDDAA;
+        transform: translate(-50%,-50%);
+        z-index: 12;
+        width: 80vw;
+        height: 80vh;
+    }
+    #closepopup{
+        position: absolute;
+        top: 2vh;
+        right: 2vh;
+        z-index: 90;
+    }
+    #grey{
+        top: 0%;
+        left: 0%;
+        position:fixed;
+        background-color: #DDDDDDAA;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 10;
+        display: none;
+    }
+    iframe{
+        width: 80vw;
+        top: 2vh;
+        height: 78vh;
+    }
+    iframe::-webkit-scrollbar{
+        display: none;
+    }
+    #MCV-form{
+        top: 2vh;
+        display: none;
+        z-index: 12;
+    }
+    #MM-form{
+        z-index: 11;
+        display: none;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    /* phone */
+    #events{
+        width:100%;
+        height:100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        /* background-color: #918658; */
+        background-color: var(--Beige);
+    }
+    #event{
+        margin: 0 0;
+        padding: 0 0;
+        width: 100%;
+        text-align: center;
+        height: 10vh;
+        font-size: 3vh;
+        color: #9F5C4A;
+    }
+    #MCV,#MM,#Info{
+        left: 0%;
+        height: 30vh;
+        width: 100vw;
+        overflow: hidden;
+        transition: forwards;
+    }
+    #MCV{
+        top: 10vh;
+    }
+    .grey{
+        top: 0%;
+        left: 0%;
+        position: absolute;
+        width: 100vw;
+        height: 30vh;
+        background-color: #EEEEEEAA;
+    }
+    h5{
+        font-size: 1.4rem;
+    }
+    .info{
+        color: #9F5C4A;
+        margin-top: 3vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 2vh;
+        height: 25vh;
+        width: 90vw;
+        bottom: 0;
+    }
+    #phonetext{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-right: 2vw;
+        margin-bottom: 2vh;
+        text-align: right;
+        transform: translateY(-100%);
+        vertical-align: bottom;
+        color: var(--Brown);
+        font-weight: 750;
+        background-color: #FFFFFFCC;
+        padding: 1vh 1vw;
+    }
+    #MM{
+        top: 40vh;
+    }
+    #Info{
+        top: 70vh;
+    }
+    #MCVdes,#MMdes,#Infodes{
+        display:none;
+        transition: forwards;
+    }
+    #MCVimage,#Infoimage,#MMimage{
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    #MMimage{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #MCV-info,#MM-info,#Info-info{
+        display: none;
+    }
+    #popup{
+        display:none;
+    }
+}
