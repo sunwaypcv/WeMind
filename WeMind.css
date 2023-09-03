@@ -33,7 +33,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: var(--Beige);
 }
 
@@ -66,7 +66,7 @@
     top:100vh;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 #event{
     font-size: 2vh;
@@ -100,6 +100,14 @@ a:hover::before{
 }
 a:hover{
     color: var(--Peach);
+}
+bold{
+    font-weight: 600;
+    font-size: 1.3rem;
+    width: 100%;
+    transform: translateX(-50%);
+    text-align: center;
+    position: absolute;
 }
 @media only screen and (min-width:800px) {
     /* computer */
@@ -174,6 +182,7 @@ a:hover{
         transition: 1s all ease-in-out;
         position: absolute;
         z-index: 5;
+        font-size: .8rem;
         /* font-size: 1vw; */
     }
     .learnmore{
@@ -257,6 +266,7 @@ a:hover{
         transition: 1s all ease-in-out;
         position: absolute;
         z-index: 5;
+        font-size: .8rem;
     }
     #popup{
         display: none;
@@ -398,5 +408,62 @@ a:hover{
     }
     #popup{
         display:none;
+    }
+    iframe{
+        display: none;
+    }
+    #phonegrey{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #DDDDDDAA;
+        display: none;
+    }
+    #phonepopup{
+        position: fixed;
+        width: 90vw;
+        height: 80vh;
+        z-index: 10;
+        top: 10vh;
+        left: 5vw;
+        background-color: #DDDDDD;
+        border: 3px solid #EEEEEEAA;
+        display: none;
+        z-index: 10;
+    }
+    #phoneclosepopup{
+        position: absolute;
+        top: 2vw;
+        right: 2vw;
+    }
+    .phone-details{
+        text-align: justify;
+        position: absolute;
+        top: 5vw;
+        margin: 0 3vw;
+        margin-top: 5vw;
+        height: calc(100%-10vw);
+        overflow: scroll;
+        width: calc(100%-6vw);
+    }
+    #signupbutton{
+        position: absolute;
+        bottom: 2vw;
+        right: 2vw;
+        background-color: #C7745E;
+        color: antiquewhite;
+        border-radius: 1vw;
+        padding: 2vw 2vw;
+    }
+    a{
+        color: var(--Brown);
+    }
+    a:hover{
+        color: #9F5C4A;
+    }
+    bold{
+        transform: none;
     }
 }
