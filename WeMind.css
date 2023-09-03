@@ -55,7 +55,7 @@
     top: 70vh;
     left: 50vw;
     transform: translate(-50%,-50%);
-    font-size: 2.5vh;
+    font-size: 2vh;
     color: var(--Brown);
     text-align: center;;
 }
@@ -63,7 +63,7 @@
     top: 80vh;
 }
 #second{
-    top:100vh;
+    top: calc(var(--vh, 1vh) * 100);
     left: 0;
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
