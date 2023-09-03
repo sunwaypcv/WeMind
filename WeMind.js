@@ -2,12 +2,20 @@ function ID(stringid){
     return document.getElementById(stringid);
 }
 
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 navbar = ID("navbar")
 detector = ID("detector")
 previousscroll=window.pageYOffset;
 
+id=0;
+links = ["https://forms.gle/S6ddNBvuHViccwGc9","https://forms.gle/xunViHw42gHgLUGx5"]
+
 popup = ID("popup");
+phonepopup = ID("phonepopup");
 
 if(window.innerWidth>800){
     window.onscroll = function(){
@@ -75,6 +83,39 @@ if(window.innerWidth>800){
         ID("MM-form").style.display="block";
         ID("grey").style.display="block";
     }
-
-
+}else{
+    ID("MCV").onclick = ()=>{
+        ID("phonegrey").style.display="block";
+        ID("phoneMCV").style.display="block";
+        ID("phoneMM").style.display="none";
+        ID("phoneInfo").style.display="none";
+        phonepopup.style.display="block"
+        id=0;
+    }
+    ID("MM").onclick = ()=>{
+        ID("phonegrey").style.display="block";
+        ID("phoneMCV").style.display="none";
+        ID("phoneMM").style.display="block";
+        ID("phoneInfo").style.display="none";
+        phonepopup.style.display="block"
+        id=1;
+    }
+    ID("Info").onclick = ()=>{
+        ID("phonegrey").style.display="block";
+        ID("phoneMCV").style.display="none";
+        ID("phoneMM").style.display="none";
+        ID("phoneInfo").style.display="block";
+        phonepopup.style.display="block"
+        ID("signupbutton").style.display="none";
+    }
+    ID("phoneclosepopup").onclick = ()=>{
+        ID("phonegrey").style.display="none";
+        ID("phoneMCV").style.display="none";
+        ID("phoneMM").style.display="none";
+        ID("signupbutton").style.display="block";
+        phonepopup.style.display="none"
+    }
+    ID("signupbutton").onclick = ()=>{
+        window.open(links[id], "_blank");
+    }
 }
