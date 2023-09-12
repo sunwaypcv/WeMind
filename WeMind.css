@@ -267,6 +267,14 @@ bold{
         position: absolute;
         z-index: 5;
         font-size: .8rem;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+    #Info-details{
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        width: revert;
+        width: 80%;
     }
     #popup{
         display: none;
